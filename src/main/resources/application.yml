@@ -1,0 +1,28 @@
+server:
+  port: 9011
+spring:
+  application:
+    name: sc-consumer
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+sc-producer:
+  ribbon:
+    ConnectTimeout: 2000
+    ReadTimeout: 3000
+    OkToRetryOnAllOperations: true
+    MaxAutoRetries: 0
+    MaxAutoRetriesNextServer: 0
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RoundRobinRule
+logging:
+  level:
+    com.lagou.edu.controller.service.ResumeServiceFeignClient: debug
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9001/eureka
