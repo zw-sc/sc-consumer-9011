@@ -8,6 +8,7 @@
         <artifactId>sc-parent</artifactId>
         <groupId>com.sc</groupId>
         <version>1.0-SNAPSHOT</version>
+        <relativePath>../sc-parent/pom.xml</relativePath>
     </parent>
 
     <artifactId>sc-consumer-9011</artifactId>
@@ -16,6 +17,10 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
