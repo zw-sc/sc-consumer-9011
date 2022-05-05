@@ -5,6 +5,7 @@ import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import com.sc.service.TestService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.netflix.hystrix.HystrixProperties;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -36,7 +37,7 @@ public class TestController {
                     @HystrixProperty(name = "maxQueueSize", value = "20")
             },
             commandProperties = {
-                    @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "1000")
+                    @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "3000")
             },
             fallbackMethod = "myFallback" // 熔断后降级方法
     )
